@@ -1,0 +1,44 @@
+{% extends 'main/layout.html' %}
+
+<!-- <form action="{% url 'list' %}" method="get">
+<label for="search">Поиск:</label>
+<input type="text" id="search" name="search">
+<input type="submit" value="Найти">
+</form> -->
+
+{% block title %} Главная страница {% endblock %}
+
+{% block content %}
+    <div class="features">
+        <h1>{{ title }}</h1>
+    </div>
+    <br>
+    <div class="search">
+        <form class="form-search" method="post" action="{% url 'news_home' %}">
+            {% csrf_token %}
+            <div class="search-line">
+                <input type="text" id="search" name="search" placeholder="Название вакансии...">
+                <input type="submit" class="btn btn-danger" value="Найти">
+            </div>
+            <br>
+            <div class="region-param">
+                <select class="form-select" id="region" name="region">
+                    <option value="113">Российская федерация</option>
+                    <option value="1">Москва</option>
+                    <option value="2">Санкт-Петербугр</option>
+                    <option value="3">Екатеринбург</option>
+                    <option value="4">Новосибирск</option>
+                    <option value="66">Нижний Новгород</option>
+                </select>
+
+                <select class="form-select" id="experience" name="experience">
+                    <option value="">Не имеет значения</option>
+                    <option value="Нет опыта">Нет опыта</option>
+                    <option value="От 1 года до 3 лет">От 1 года до 3 лет</option>
+                    <option value="От 3 до 6 лет">От 3 до 6 лет</option>
+                    <option value="Более 6 лет">Более 6 лет</option>
+                </select>
+            </div>
+        </form>
+    </div>
+{% endblock %}

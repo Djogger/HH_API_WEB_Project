@@ -1,0 +1,15 @@
+*.env
+*.log
+
+__pycache__
+*.pyo
+*.pyd
+*.db
+
+/staticfiles/
+/migrations/
+
+*.ini
+*.conf
+
+/venv/
